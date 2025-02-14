@@ -10,5 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo"<h2>Wataru Okada - CT1010492</h2>";    
     echo "<h2>Result:</h2>";
     echo $output;
+    $publicIpcmd = escapeshellcmd("ec2-metadata -v");
+    $publicIp = shell_exec($publicIpcmd);
 }
 ?>
